@@ -6,17 +6,17 @@ function add(e){
 let addtext = document.getElementById("addText");
 let notes = localStorage.getItem("notes");
 if(notes==null){
- notesObj = [];
+ notesArr = [];
 }
 else{
-  notesObj = JSON.parse(notes);
+  notesArr = JSON.parse(notes);
 }
 if(addtext.value==""){
 alert("Please add some notes !")
 }
   else{
-notesObj.push(addtext.value);
-localStorage.setItem("notes", JSON.stringify(notesObj));
+notesArr.push(addtext.value);
+localStorage.setItem("notes", JSON.stringify(notesArr));
 addtext.value = "";
 showNotes();
   }
@@ -25,13 +25,13 @@ showNotes();
 function showNotes(){
     let notes = localStorage.getItem("notes");
     if(notes == 0){
-       notesObj = [];
+       notesArr = [];
     }
     else{
-        notesObj = JSON.parse(notes);  
+        notesArr = JSON.parse(notes);  
     }
     let html = "";
-    notesObj.forEach(function(element,index){
+    notesArr.forEach(function(element,index){
         html += `
         <div class="row">
         <div class="card my-2 mx-5" style="width: 18rem;">
@@ -47,7 +47,7 @@ function showNotes(){
         
     });
     let notesElem = document.getElementById('notes');
-    if(notesObj.length != 0){
+    if(notesArr.length != 0){
         notesElem.innerHTML = html;
     }
     else{
@@ -59,12 +59,12 @@ showNotes();
 function deleteNote(index) {
 let notes = localStorage.getItem("notes");
 if (notes == null) {
-    notesObj = [];
+    notesArr = [];
   } else {
-    notesObj = JSON.parse(notes);
+    notesArr = JSON.parse(notes);
   }  
-notesObj.splice(index,1);
-localStorage.setItem("notes", JSON.stringify(notesObj));
+notesArr.splice(index,1);
+localStorage.setItem("notes", JSON.stringify(notesArr));
 showNotes();
 }
 
