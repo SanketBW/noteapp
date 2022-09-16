@@ -3,7 +3,8 @@ function clr(){
   document.getElementById("addText").value="";
 }
 function add(e){
-let addtext = document.getElementById("addText");
+let addText = document.getElementById("addText");
+let addTitle = document.getElementById("addTitle");
 let notes = localStorage.getItem("notes");
 if(notes==null){
  notesArr = [];
@@ -11,11 +12,15 @@ if(notes==null){
 else{
   notesArr = JSON.parse(notes);
 }
+  let noteObj = {
+    title : addTitle.value,
+    text : addText.value,
+  }
 if(addtext.value==""){
 alert("Please add some notes !")
 }
   else{
-notesArr.push(addtext.value);
+notesArr.push(noteObj);
 localStorage.setItem("notes", JSON.stringify(notesArr));
 addtext.value = "";
 showNotes();
@@ -34,10 +39,10 @@ function showNotes(){
     notesArr.forEach(function(element,index){
         html += `
         <div class="row">
-        <div class="card my-2 mx-5" style="width: 18rem;">
+        <div class="card my-2 mx-5" style="width: 18rem; "font-family: times new roman;">
         <div class="card-body">
-          <h5 class="card-title text-primary">Note ${index + 1}</h5>
-          <p class="card-text text-dark">${element}</p>
+          <h5 class="card-title text-primary">${element.title}</h5>
+          <p class="card-text text-dark">${element.text}</p>
           <button href="#" id="${index}" class="btn btn-warning" onclick="deleteNote(this.id)">Delete</button>
         </div>
       </div>
