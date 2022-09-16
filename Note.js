@@ -3,7 +3,7 @@ function clr(){
   document.getElementById("addText").value="";
 }
 function add(e){
-let addText = document.getElementById("addText");
+let addtext = document.getElementById("addText");
 let addTitle = document.getElementById("addTitle");
 let notes = localStorage.getItem("notes");
 if(notes==null){
@@ -14,7 +14,7 @@ else{
 }
   let noteObj = {
     title : addTitle.value,
-    text : addText.value,
+    text : addtext.value,
   }
 if(addtext.value==""){
 alert("Please add Title & some Notes !")
@@ -23,7 +23,7 @@ alert("Please add Title & some Notes !")
 notesArr.push(noteObj);
 localStorage.setItem("notes", JSON.stringify(notesArr));
 addTitle.value = "";
-addText.value = "";
+addtext.value = "";
 showNotes();
   }
 }
