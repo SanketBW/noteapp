@@ -22,7 +22,8 @@ alert("Please add Title & some Notes !")
   else{
 notesArr.push(noteObj);
 localStorage.setItem("notes", JSON.stringify(notesArr));
-addtext.value = "";
+addTitle.value = "";
+addText.value = "";
 showNotes();
   }
 }
