@@ -16,7 +16,7 @@ let NoteObj = {
     title :addTitle.value,
     text : addtext.value,
   }
-if(addtext.value=="" || addTitle.value ==""){
+if(addtext.value==""){
 alert("Please add Title & Some Notes !")
 }
   else{
