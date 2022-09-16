@@ -17,7 +17,7 @@ else{
     text : addText.value,
   }
 if(addtext.value==""){
-alert("Please add some notes !")
+alert("Please add Title & some Notes !")
 }
   else{
 notesArr.push(noteObj);
