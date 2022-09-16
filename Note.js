@@ -11,11 +11,15 @@ if(notes==null){
 else{
   notesObj = JSON.parse(notes);
 }
-
+if(addtext.value==""){
+alert("Please add some notes !")
+}
+  else{
 notesObj.push(addtext.value);
 localStorage.setItem("notes", JSON.stringify(notesObj));
 addtext.value = "";
 showNotes();
+  }
 }
 
 function showNotes(){
