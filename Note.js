@@ -40,7 +40,7 @@ function showNotes(){
     notesArr.forEach(function(element,index){
         html += `
         <div class="row">
-        <div class="card my-2 mx-5" style="width: 18rem; "font-family: times new roman;">
+        <div class="card my-2 mx-5" style="width: 18rem; font-family: times new roman;">
         <div class="card-body">
           <h5 class="card-title text-primary">Note-${index+1} : ${element.title}</h5>
           <p class="card-text text-dark">${element.text}</p>
