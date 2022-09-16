@@ -12,18 +12,18 @@ if(notes==null){
 else{
   notesArr = JSON.parse(notes);
 }
-  let noteObj = {
-    title : addTitle.value,
+let NoteObj = {
+    title :addTitle.value,
     text : addtext.value,
   }
 if(addtext.value==""){
 alert("Please add Title & some Notes !")
 }
   else{
-notesArr.push(noteObj);
+notesArr.push(NoteObj);
 localStorage.setItem("notes", JSON.stringify(notesArr));
-addTitle.value = "";
-addtext.value = "";
+ addTitle.value = "";
+ addtext.value = "";
 showNotes();
   }
 }
