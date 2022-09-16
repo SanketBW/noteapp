@@ -16,8 +16,8 @@ let NoteObj = {
     title :addTitle.value,
     text : addtext.value,
   }
-if(addtext.value==""){
-alert("Please add Title & some Notes !")
+if(addtext.value=="" || addTitle.value ==""){
+alert("Please add Title & Some Notes !")
 }
   else{
 notesArr.push(NoteObj);
@@ -42,7 +42,7 @@ function showNotes(){
         <div class="row">
         <div class="card my-2 mx-5" style="width: 18rem; "font-family: times new roman;">
         <div class="card-body">
-          <h5 class="card-title text-primary">${element.title}</h5>
+          <h5 class="card-title text-primary">Note-${index+1} : ${element.title}</h5>
           <p class="card-text text-dark">${element.text}</p>
           <button href="#" id="${index}" class="btn btn-warning" onclick="deleteNote(this.id)">Delete</button>
         </div>
